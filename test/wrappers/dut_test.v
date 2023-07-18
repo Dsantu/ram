@@ -30,9 +30,6 @@ module dut (clk_write, address_write,
   always @(posedge clk_read) begin
     data_read <= memory[address_read];
   end
-
-endmodule
-
 dut ip(.clk_write(clk_write), 
        .address_write(address_write),
        .data_write(data_write), 
