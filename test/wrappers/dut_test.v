@@ -41,9 +41,9 @@ dut ip(.clk_write(clk_write),
 initial begin
 		$dumpfile("dut.vcd");
 		$dumpvars(0, dut_test);
-		CLK=0;
+		clk_write=0;
 		forever begin
-			#5 CLK=~CLK;
+			#5 clk_write=~clk_write;
 		end
 	end
 	endmodule
