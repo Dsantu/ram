@@ -1,4 +1,4 @@
-module dut_test(clk_write, address_write,
+module dut (clk_write, address_write,
   data_write, write_enable,
   clk_read, address_read, data_read);
   
@@ -16,10 +16,23 @@ module dut_test(clk_write, address_write,
   input  [A_WIDTH-1:0] address_read;
   output [D_WIDTH-1:0] data_read;
   
-  //reg    [D_WIDTH-1:0] data_read;
-  
   // Memory as multi-dimensional array
-  //reg [D_WIDTH-1:0] memory [0:2**A_WIDTH-1];
+  reg [D_WIDTH-1:0] memory [0:2**A_WIDTH-1];
+
+  // Write data to memory
+  always @(posedge clk_write) begin
+    if (write_enable) begin
+      memory[address_write] <= data_write;
+    end
+  end
+
+  // Read data from memory
+  always @(posedge clk_read) begin
+    data_read <= memory[address_read];
+  end
+
+endmodule
+
 dut ip(.clk_write(clk_write), 
        .address_write(address_write),
        .data_write(data_write), 
