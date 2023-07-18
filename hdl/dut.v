@@ -1,8 +1,3 @@
-// Code your design here
-/* 
- * Random Access Memory (RAM) with
- * 1 read port and 1 write port
- */
 module dut (clk_write, address_write,
   data_write, write_enable,
   clk_read, address_read, data_read);
@@ -21,8 +16,6 @@ module dut (clk_write, address_write,
   input  [A_WIDTH-1:0] address_read;
   output [D_WIDTH-1:0] data_read;
   
-  reg    [D_WIDTH-1:0] data_read;
-  
   // Memory as multi-dimensional array
   reg [D_WIDTH-1:0] memory [0:2**A_WIDTH-1];
 
@@ -39,3 +32,4 @@ module dut (clk_write, address_write,
   end
 
 endmodule
+
