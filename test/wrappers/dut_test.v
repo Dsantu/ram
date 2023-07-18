@@ -1,4 +1,4 @@
-module ram (clk_write, address_write,
+module dut_test(clk_write, address_write,
   data_write, write_enable,
   clk_read, address_read, data_read);
   
