@@ -21,7 +21,7 @@ module dut (clk_write, address_write,
   input  [A_WIDTH-1:0] address_read;
   output [D_WIDTH-1:0] data_read;
   
-  //reg    [D_WIDTH-1:0] data_read;
+  reg    [D_WIDTH-1:0] data_read;
   
   // Memory as multi-dimensional array
   reg [D_WIDTH-1:0] memory [0:2**A_WIDTH-1];
